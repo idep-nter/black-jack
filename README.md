@@ -6,5 +6,5 @@ So in a nutshell:
 Game starts by creating chips and deck which it shuffles before it asks player how much he wants to bet.
 Then it created player's and dealer's hand with two cards in each and three of them shows to the player.
 Depending on the total value of his cards he decides if he wants take another card or end up.
-If he hits 22 or more it automatically continues to the dealer's turn. He's taking cards until he reaches 17 or more.
+If he hits 22 or more it automatically continues to the dealer's turn. Dealer is taking cards until he reaches total value of 17 or more.
 At the end it prints result, redistributes chips and asks player if wants to continue.
