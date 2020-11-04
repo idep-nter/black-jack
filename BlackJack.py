@@ -116,7 +116,7 @@ class Chip:
 def makeBet(chips):
     """
     Asks player to enter desired number of chips to bet and checks if it is an
-    integer and if he owns that much at that time.
+    integer and if he owns that much at the time.
     """
     while True:
         try:
@@ -132,7 +132,7 @@ def makeBet(chips):
 
 def aceValue(hand, totalValue):
     """
-    Checks if it's an ace in the hand and returns True if it should be value of
+    Checks if there is an ace in the hand and returns True if it should be value of
     1.
     """
     ace = re.compile(r'Ace of (Hearts|Diamonds|Spades|Clubs)')
@@ -144,7 +144,7 @@ def aceValue(hand, totalValue):
 
 def hitOrCard():
     """
-    Asks player if he wants another card and checks correct format.
+    Asks player if he wants an another card and checks correct format.
     """
     while True:
         try:
@@ -161,7 +161,7 @@ def hitOrCard():
 
 def count(hand):
     """
-    Count total value of cards in the hand and determines correct value of ace
+    Counts total value of cards in the hand and determines correct value of ace
     if it is there.
     """
     totalValue = 0
@@ -176,8 +176,8 @@ def count(hand):
 
 def result(playersHand, dealersHand, pCount, dCount, chips, bet):
     """
-    Prints both hands and total values and evaluates result. Adds or subtract
-    chips depending on result.
+    Prints both hands, total values and evaluates result. Adds or subtract
+    chips depending on the result.
     """
     print(f'Your hand:\n{playersHand}')
     print('-'*20)
