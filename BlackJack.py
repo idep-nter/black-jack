@@ -10,11 +10,11 @@ values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7,
 
 def main():
     """
-    Main functions welcomes player and creates 100 chips for him.
-    After that it checks if he has enough chips for the game, creates deck,
+    Main functions welcomes a player and creates 100 chips for him.
+    After that it checks if he has enough chips for the game, creates a deck,
     shuffles it, asks for a bet, creates hands with two cards and shows them to
     the player.
-    Then he's asked if he wants to hit or take card until he's satisfied
+    Then he's asked if he wants to hit or take a card until he's satisfied
     with total value or if he's got too much it automatically continues to the
     evaluation of result.
     At the end it prints the result, adds or subtracts chips and asks player if
@@ -22,6 +22,7 @@ def main():
     """
     print('Welcome to the game of Blackjack!')
     chips = Chip(100)
+
     while True:
         if chips.number < 1:
             print('You don\'t have chips!')
@@ -50,13 +51,19 @@ def main():
                     break
             else:
                 break
-        pCount = count(pHand)
-        dCount = count(dHand)
-        while dCount < 17:
-            dHand.takeCard(deck)
+
+        if count(pHand) < 21:
+            pCount = count(pHand)
             dCount = count(dHand)
-        print('\n')
-        result(pHand, dHand, pCount, dCount, chips, bet)
+            while dCount < 17:
+                dHand.takeCard(deck)
+                dCount = count(dHand)
+            print('\n')
+            result(pHand, dHand, pCount, dCount, chips, bet)
+        else:
+            print('You have lost!')
+            print(chips)
+
         if playAgain():
             continue
         else:
@@ -185,7 +192,8 @@ def result(playersHand, dealersHand, pCount, dCount, chips, bet):
     print(f'Dealers\'s hand:\n{dealersHand}')
     print('-'*20)
     print(f'Total value: {count(dealersHand)}\n')
-    if (pCount <= 21 and pCount > dCount) or (pCount <= 21 and dCount > 21):
+
+    if pCount > dCount or dCount > 21:
         print('You have won!')
         chips.number += bet*2
         print(chips)
@@ -195,6 +203,7 @@ def result(playersHand, dealersHand, pCount, dCount, chips, bet):
     else:
         print('You have lost!')
         print(chips)
+
 
 def playAgain():
     """
