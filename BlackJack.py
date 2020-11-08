@@ -207,7 +207,7 @@ def result(pHand, dHand, pCount, dCount, chips, bet):
 
 def playAgain():
     """
-    Asks player if he wants to repeat the game and checks the correct format of
+    Asks the player if he wants to repeat the game and checks correct format of the
     answer.
     """
     while True:
