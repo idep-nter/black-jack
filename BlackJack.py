@@ -181,7 +181,7 @@ def count(hand):
 
     return totalValue
 
-def result(playersHand, dealersHand, pCount, dCount, chips, bet):
+def result(pHand, dHand, pCount, dCount, chips, bet):
     """
     Prints both hands, total values and evaluates result. Adds or subtract
     chips depending on the result.
