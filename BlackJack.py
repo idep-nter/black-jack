@@ -10,7 +10,7 @@ values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7,
 
 def main():
     """
-    Main functions welcomes a player and creates 100 chips for him.
+    Main function welcomes a player and creates 100 chips for him.
     After that it checks if he has enough chips for the game, creates a deck,
     shuffles it, asks for a bet, creates hands with two cards and shows them to
     the player.
