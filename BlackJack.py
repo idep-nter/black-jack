@@ -10,15 +10,15 @@ values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7,
 
 def main():
     """
-    Main function welcomes a player and creates 100 chips for him.
+    The main function welcomes a player and creates 100 chips for him.
     After that it checks if he has enough chips for the game, creates a deck,
     shuffles it, asks for a bet, creates hands with two cards and shows them to
     the player.
     Then he's asked if he wants to hit or take a card until he's satisfied
-    with total value or if he's got too much it automatically continues to the
-    evaluation of result.
-    At the end it prints the result, adds or subtracts chips and asks player if
-    he wants to repeat the game.
+    with a total value or if he's got too much, it automatically continues to an
+    evaluation of the result.
+    At the end it prints the result, adds or subtracts chips and asks the player 
+    if he wants to repeat the game.
     """
     print('Welcome to the game of Blackjack!')
     chips = Chip(100)
@@ -122,7 +122,7 @@ class Chip:
 
 def makeBet(chips):
     """
-    Asks player to enter desired number of chips to bet and checks if it is an
+    Asks the player to enter a desired number of chips to bet and checks if it is an
     integer and if he owns that much at the time.
     """
     while True:
@@ -151,7 +151,7 @@ def aceValue(hand, totalValue):
 
 def hitOrCard():
     """
-    Asks player if he wants an another card and checks correct format.
+    Asks the player if he wants an another card and checks a correct format.
     """
     while True:
         try:
@@ -168,8 +168,8 @@ def hitOrCard():
 
 def count(hand):
     """
-    Counts total value of cards in the hand and determines correct value of ace
-    if it is there.
+    Counts a total value of cards in the hand and determines a correct value of an 
+    ace if it is there.
     """
     totalValue = 0
     for card in hand.hand:
@@ -183,7 +183,7 @@ def count(hand):
 
 def result(pHand, dHand, pCount, dCount, chips, bet):
     """
-    Prints both hands, total values and evaluates result. Adds or subtract
+    Prints both hands, total values and evaluates the result. Adds or subtract
     chips depending on the result.
     """
     print(f'Your hand:\n{playersHand}')
@@ -207,7 +207,7 @@ def result(pHand, dHand, pCount, dCount, chips, bet):
 
 def playAgain():
     """
-    Asks the player if he wants to repeat the game and checks correct format of the
+    Asks the player if he wants to repeat the game and checks a correct format of the
     answer.
     """
     while True:
