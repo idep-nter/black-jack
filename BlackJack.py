@@ -214,7 +214,6 @@ def playAgain():
         except ValueError:
             print('Please enter "y" or "n".')
             continue
-
-
-if _name_ == '_main_':
+         
+if __name__ == '__main__':
     main()
