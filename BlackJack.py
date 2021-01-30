@@ -39,7 +39,6 @@ def main():
         print(pHand)
         print('-'*20)
         print(f'Total value: {count(pHand)}\n')
-
         while True:
             if hitOrCard():
                 pHand.takeCard(deck)
@@ -51,7 +50,6 @@ def main():
                     break
             else:
                 break
-
         if count(pHand) < 21:
             pCount = count(pHand)
             dCount = count(dHand)
@@ -63,7 +61,6 @@ def main():
         else:
             print('You have lost!')
             print(chips)
-
         if playAgain():
             continue
         else:
@@ -136,7 +133,6 @@ def makeBet(chips):
             print('Please enter correct value!')
             continue
 
-
 def aceValue(hand, totalValue):
     """
     Checks if there is an ace in the hand and returns True if it should be value of
@@ -147,7 +143,6 @@ def aceValue(hand, totalValue):
         return True
 
     return False
-
 
 def hitOrCard():
     """
@@ -175,7 +170,6 @@ def count(hand):
     for card in hand.hand:
         value = values[card.rank]
         totalValue += value
-
     if aceValue(hand, totalValue):
         totalValue -= 10
 
@@ -192,7 +186,6 @@ def result(pHand, dHand, pCount, dCount, chips, bet):
     print(f'Dealers\'s hand:\n{dealersHand}')
     print('-'*20)
     print(f'Total value: {count(dealersHand)}\n')
-
     if pCount > dCount or dCount > 21:
         print('You have won!')
         chips.number += bet*2
@@ -203,7 +196,6 @@ def result(pHand, dHand, pCount, dCount, chips, bet):
     else:
         print('You have lost!')
         print(chips)
-
 
 def playAgain():
     """
@@ -223,4 +215,6 @@ def playAgain():
             print('Please enter "y" or "n".')
             continue
 
-main()
+
+if _name_ == '_name_':
+    main()
